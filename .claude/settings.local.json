@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(where npm:*)",
+      "Read(//c/Program Files/nodejs/**)",
+      "Read(//c/Program Files/nodejs//**)",
+      "Bash(\"C:/Program Files/nodejs/npm\" run dev)",
+      "Bash(\"C:/Program Files/nodejs/node.exe\" \"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" run dev)",
+      "Bash('C:/Program Files/nodejs/node.exe' ./node_modules/.bin/next dev)",
+      "Bash(cmd.exe /c 'node_modules\\\\.bin\\\\next.cmd dev')",
+      "Bash(cmd.exe /c '\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" node_modules\\\\next\\\\dist\\\\bin\\\\next dev')",
+      "Bash(python3 -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python3 -c \"import fitz; print\\('fitz ok'\\)\")",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -c \"import fitz; print\\('PyMuPDF version:', fitz.version\\)\")",
+      "Bash(/c/Users/PetteChappell/AppData/Local/Programs/Python/Python312/python.exe)",
+      "Bash(where git:*)",
+      "Bash(git --version)",
+      "Bash(where gh:*)",
+      "Bash(gh --version)"
+    ]
+  }
+}

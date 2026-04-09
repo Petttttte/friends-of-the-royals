@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --royal-burgundy: #8b3f33;
+  --royal-navy: #273742;
+  --royal-gray: #eff1f3;
+  --royal-tan: #d1b6a2;
+  --royal-mauve: #dbd3d8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #273742;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+/* Scroll reveal animation utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eff1f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #273742;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b3f33;
+}
+
+/* Progress bar */
+.progress-bar-fill {
+  transition: width 1.5s ease-in-out;
+}
+
+/* Button hover states */
+.btn-burgundy {
+  @apply bg-royalBurgundy text-white font-semibold px-8 py-4 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-navy {
+  @apply bg-royalNavy text-white font-semibold px-8 py-4 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-outline-white {
+  @apply border-2 border-white text-white font-semibold px-8 py-4 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5;
+}
+
+.btn-outline-burgundy {
+  @apply border-2 border-royalBurgundy text-royalBurgundy font-semibold px-8 py-4 transition-all duration-300 hover:bg-royalBurgundy hover:text-white hover:-translate-y-0.5;
+}
+
+/* Section label style */
+.section-label {
+  @apply text-royalBurgundy font-extrabold text-sm uppercase tracking-widest mb-3;
+}
+
+/* Card hover */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Text gradient */
+.text-gradient-burgundy {
+  background: linear-gradient(135deg, #8b3f33, #c45a4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 55, 66, 0.85) 0%,
+    rgba(39, 55, 66, 0.75) 50%,
+    rgba(39, 55, 66, 0.9) 100%
+  );
+}
+
+/* Custom focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #8b3f33;
+  box-shadow: 0 0 0 3px rgba(139, 63, 51, 0.15);
+}
+
+/* Stat counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-animate {
+  animation: countUp 0.5s ease-out forwards;
+}
+
+/* Stripe element styling */
+.StripeElement {
+  padding: 16px;
+  border: 1px solid #dbd3d8;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.StripeElement--focus {
+  border-color: #8b3f33;
+  box-shadow: 0 0 0 3px rgba(139, 63, 51, 0.15);
+}
+
+/* Navigation active */
+.nav-link {
+  @apply relative text-sm font-semibold tracking-wide transition-colors duration-200;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8b3f33;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hexagon clip */
+.hexagon {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
