@@ -53,97 +53,149 @@ export default function HomePage() {
   return (
     <>
       {/* ============================================================
-          HERO — split: dark text left, photo visible right, compact height
+          ABOVE-THE-FOLD MAGAZINE GRID
+          Left col: navy headline + stats + CTAs
+          Top-right: grad photo (red tinted)
+          Bottom-right: white events panel + burgundy donate panel
       ============================================================ */}
       <section
-        className="relative flex items-center overflow-hidden"
-        style={{ height: "calc(100vh - 70px)", minHeight: "520px", maxHeight: "780px" }}
+        className="overflow-hidden w-full"
+        style={{
+          height: "calc(100vh - 70px)",
+          minHeight: "600px",
+          maxHeight: "920px",
+          display: "grid",
+          gridTemplateColumns: "2fr 3fr 2fr",
+          gridTemplateRows: "1fr 1fr",
+        }}
       >
-        {/* Full-bleed graduation photo */}
-        <img
-          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
-        />
-        {/* Directional gradient: opaque navy left → transparent right so photo shows */}
+        {/* ── LEFT: navy, full height ── */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(39,55,66,0.97) 0%, rgba(39,55,66,0.95) 35%, rgba(39,55,66,0.60) 60%, rgba(39,55,66,0.10) 100%)",
-          }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-10" />
-
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="animate-fadeIn max-w-xl">
+          className="bg-royalNavy flex flex-col justify-between p-7 lg:p-10"
+          style={{ gridRow: "1 / 3" }}
+        >
+          <div>
             <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-4">
               Riverview, New Brunswick
             </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-none mb-5">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
               Fellow Royals,
               <br />
               <span className="text-royalBurgundy">Helping Royals.</span>
             </h1>
-            <p className="text-white/75 font-light text-base md:text-lg mb-8 leading-relaxed">
+            <p className="text-white/65 font-light text-sm leading-relaxed mb-6">
               Supporting Riverview students through scholarships, mentorship,
               and community — because every Royal deserves a champion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col gap-3">
               <Link
                 href="/donate"
-                className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-xs uppercase tracking-widest px-5 py-3 transition-all duration-300 hover:bg-opacity-90"
               >
-                Support a Student Today
+                ♥ &nbsp;Support a Student Today
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center border border-white/40 text-white font-extrabold text-xs uppercase tracking-widest px-5 py-3 transition-all duration-300 hover:border-white"
               >
                 Apply for a Scholarship
               </Link>
+              <Link
+                href="/projects/turf-field"
+                className="inline-flex items-center justify-center border border-royalBurgundy/60 text-royalTan font-extrabold text-xs uppercase tracking-widest px-5 py-3 transition-all duration-300 hover:border-royalBurgundy"
+              >
+                Turf Field Project
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ============================================================
-          WHITE STATS BAR — visible above the fold
-      ============================================================ */}
-      <section className="bg-white border-b-4 border-royalBurgundy shadow-lg">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-royalMauve">
+          {/* Mini stats 2×2 */}
+          <div className="grid grid-cols-2 gap-2">
             {[
-              {
-                icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z",
-                number: "$5,000+",
-                label: "Awarded in Scholarships Each Year",
-              },
-              {
-                icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-                number: "100+",
-                label: "Students Supported",
-              },
-              {
-                icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-                number: "$30,000+",
-                label: "Raised for the Community",
-              },
-              {
-                icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-                number: "50+",
-                label: "Alumni Giving Back",
-              },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center justify-center gap-1 px-4 py-6 text-center">
-                <svg className="w-7 h-7 text-royalBurgundy mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={stat.icon} />
-                </svg>
-                <p className="text-3xl font-extrabold text-royalNavy">{stat.number}</p>
-                <p className="text-royalNavy/60 font-semibold text-xs uppercase tracking-widest leading-snug">{stat.label}</p>
+              { number: "$5,000+", label: "In Scholarships" },
+              { number: "100+",    label: "Students Helped"  },
+              { number: "$30,000+",label: "Raised"           },
+              { number: "50+",     label: "Alumni"           },
+            ].map((s, i) => (
+              <div key={i} className="bg-white/10 border border-white/10 p-3 text-center">
+                <p className="text-lg font-extrabold text-royalBurgundy">{s.number}</p>
+                <p className="text-white/55 text-xs uppercase tracking-wide">{s.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* ── TOP-RIGHT: graduation photo, red-tinted ── */}
+        <div className="relative overflow-hidden" style={{ gridColumn: "2 / 4" }}>
+          <img
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1400&q=80"
+            alt="Riverview graduates celebrating"
+            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+          />
+          {/* Burgundy multiply tint → turns dark gowns red, keeps highlights warm */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "#8b3f33", mixBlendMode: "multiply", opacity: 0.45 }}
+          />
+          {/* Bottom text strip */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-royalNavy/90 via-royalNavy/30 to-transparent px-8 py-6">
+            <p className="text-white font-extrabold text-xl md:text-2xl">
+              Every student deserves a champion.
+            </p>
+            <p className="text-royalTan text-xs uppercase tracking-widest mt-1">
+              Friends of the Royals Alumni Association
+            </p>
+          </div>
+        </div>
+
+        {/* ── BOTTOM-RIGHT-LEFT: white events panel ── */}
+        <div className="bg-white border-t-4 border-royalBurgundy flex flex-col p-6 overflow-hidden">
+          <p className="text-royalBurgundy font-extrabold text-xs uppercase tracking-widest mb-4">
+            Upcoming Events
+          </p>
+          <div className="space-y-3 flex-1">
+            {upcomingEvents.map((event, i) => (
+              <Link key={i} href={event.href} className="flex items-start gap-3 group">
+                <svg className="w-4 h-4 text-royalBurgundy flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <div>
+                  <p className="text-royalBurgundy font-extrabold text-xs">{event.date}</p>
+                  <p className="text-royalNavy font-semibold text-sm group-hover:text-royalBurgundy transition-colors duration-200">
+                    {event.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/events"
+            className="mt-4 inline-flex items-center gap-1 text-royalBurgundy font-extrabold text-xs uppercase tracking-widest hover:gap-3 transition-all duration-300"
+          >
+            View All Events
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* ── BOTTOM-RIGHT-RIGHT: community photo + donate overlay ── */}
+        <div className="relative overflow-hidden border-t-4 border-royalNavy">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80"
+            alt="Royals community"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" style={{ background: "rgba(139,63,51,0.88)" }} />
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-6">
+            <p className="text-4xl font-extrabold text-white mb-1">$30,000+</p>
+            <p className="text-white/65 text-xs uppercase tracking-widest mb-5">Raised for Students</p>
+            <Link
+              href="/donate"
+              className="bg-white text-royalBurgundy font-extrabold text-xs uppercase tracking-widest px-5 py-3 hover:bg-royalGray transition-all duration-300"
+            >
+              Donate Now
+            </Link>
           </div>
         </div>
       </section>
