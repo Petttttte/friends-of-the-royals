@@ -73,17 +73,22 @@ export default function HomePage() {
         <img
           src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80"
           alt="Riverview graduates celebrating"
-          className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
-          style={{ filter: "sepia(1) hue-rotate(315deg) saturate(6) brightness(0.88)" }}
+          className="absolute inset-0 w-full h-full object-cover object-[center_65%]"
+          style={{ filter: "grayscale(1) brightness(0.75) contrast(1.2)" }}
+        />
+        {/* Red tint overlay — makes dark gowns crimson, bright elements stay near-white */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{ background: "rgba(160,40,30,0.55)", mixBlendMode: "multiply" }}
         />
         {/* Left-heavy gradient: opaque left, photo shows right */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-[2]"
           style={{ background: "linear-gradient(to right, rgba(39,55,66,0.97) 0%, rgba(39,55,66,0.94) 38%, rgba(39,55,66,0.55) 62%, rgba(39,55,66,0.08) 100%)" }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-20" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-14">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-8 md:px-14">
           <div className="max-w-lg animate-fadeIn">
             <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-3">
               Riverview, New Brunswick
