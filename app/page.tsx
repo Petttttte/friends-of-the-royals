@@ -128,34 +128,34 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Stock photo background */}
         <img
-          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Brand-navy dark overlay */}
+        {/* Brand-navy dark overlay - lighter so photo shows through */}
         <div
           className="absolute inset-0"
-          style={{ background: "rgba(39, 55, 66, 0.80)" }}
+          style={{ background: "rgba(39, 55, 66, 0.68)" }}
         />
         {/* Burgundy bottom accent line */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-10" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="animate-fadeIn">
-            <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-6">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="animate-fadeIn max-w-3xl">
+            <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-5">
               Riverview, New Brunswick
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-4">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-6">
               Fellow Royals,
               <br />
               <span className="text-royalBurgundy">Helping Royals.</span>
             </h1>
-            <p className="text-white/70 font-light text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/75 font-light text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
               Supporting Riverview students through scholarships, mentorship,
               and community — because every Royal deserves a champion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/donate"
                 className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
