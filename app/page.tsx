@@ -126,80 +126,41 @@ export default function HomePage() {
           HERO
       ============================================================ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
+        {/* Stock photo background */}
+        <img
+          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        {/* Brand-navy dark overlay */}
         <div
           className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #0f1a22 0%, #1a2d3a 40%, #273742 70%, #1a2530 100%)",
-          }}
+          style={{ background: "rgba(39, 55, 66, 0.80)" }}
         />
-        {/* Decorative geometric elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute top-20 right-0 w-96 h-96 opacity-10"
-            style={{
-              background: "radial-gradient(circle, #8b3f33 0%, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute bottom-0 left-0 w-80 h-80 opacity-10"
-            style={{
-              background: "radial-gradient(circle, #8b3f33 0%, transparent 70%)",
-            }}
-          />
-          {/* Hexagon decorations */}
-          <svg
-            className="absolute top-32 right-16 opacity-5"
-            width="300"
-            height="330"
-            viewBox="0 0 100 110"
-          >
-            <polygon
-              points="50,5 93,27.5 93,82.5 50,105 7,82.5 7,27.5"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-          <svg
-            className="absolute bottom-24 left-16 opacity-5"
-            width="200"
-            height="220"
-            viewBox="0 0 100 110"
-          >
-            <polygon
-              points="50,5 93,27.5 93,82.5 50,105 7,82.5 7,27.5"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
+        {/* Burgundy bottom accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="animate-fadeIn">
             <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-6">
               Riverview, New Brunswick
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-6">
-              Friends of the
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-4">
+              Fellow Royals,
               <br />
-              <span className="text-royalBurgundy">Royals</span>
-              <br />
-              Alumni Association
+              <span className="text-royalBurgundy">Helping Royals.</span>
             </h1>
-            <p className="text-white text-opacity-70 font-light text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join a vibrant community of former students dedicated to fostering
-              connections, empowering the next generation, and creating lasting
-              impact.
+            <p className="text-white/70 font-light text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              Supporting Riverview students through scholarships, mentorship,
+              and community — because every Royal deserves a champion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/donate"
                 className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
               >
-                Donate Today
+                Support a Student Today
               </Link>
               <Link
                 href="/events"
@@ -212,9 +173,9 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
           <svg
-            className="w-6 h-6 text-white text-opacity-40"
+            className="w-6 h-6 text-white/40"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -226,6 +187,31 @@ export default function HomePage() {
               d="M19 9l-7 7-7-7"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* ============================================================
+          WHITE STATS BAR
+      ============================================================ */}
+      <section className="bg-white py-12 px-6 border-b-4 border-royalBurgundy shadow-md">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: "$30,000+", label: "Raised for Students" },
+              { number: "50+", label: "Alumni Connected" },
+              { number: "15+", label: "Events Orchestrated" },
+              { number: "5+", label: "Scholarships Awarded" },
+            ].map((stat, i) => (
+              <div key={i}>
+                <p className="text-3xl md:text-4xl font-extrabold text-royalBurgundy mb-1">
+                  {stat.number}
+                </p>
+                <p className="text-royalNavy font-semibold text-xs uppercase tracking-widest">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -271,7 +257,7 @@ export default function HomePage() {
               {stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-royalGray p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="bg-white border-l-4 border-royalBurgundy p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
                   <p className="text-4xl font-extrabold text-royalBurgundy mb-2">
                     {stat.number}
@@ -301,7 +287,7 @@ export default function HomePage() {
             {impactCards.map((card, i) => (
               <div
                 key={i}
-                className="reveal bg-white p-8 flex flex-col card-hover"
+                className="reveal bg-white p-8 flex flex-col card-hover border-t-4 border-royalBurgundy"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="text-royalBurgundy mb-4">{card.icon}</div>
