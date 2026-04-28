@@ -26,9 +26,20 @@ function useReveal() {
 }
 
 const upcomingEvents = [
-  { date: "MAY 31, 2025", title: "Annual Fundraiser Night", href: "/events" },
-  { date: "JUNE 15, 2025", title: "Scholarship Awards Ceremony", href: "/events" },
-  { date: "AUGUST 10, 2025", title: "Community Meet & Greet", href: "/events" },
+  {
+    date: "SPRING 2025",
+    title: "Parent Prom Night",
+    location: "Riverview, NB",
+    desc: "An elegant evening for parents, friends, family, and alumni to come together and raise funds for prom dresses for students in need.",
+    href: "/events/parent-prom",
+  },
+  {
+    date: "SUMMER 2025",
+    title: "Community Fundraiser",
+    location: "Riverview, NB",
+    desc: "Join us for our annual community fundraiser supporting the Turf Field Project and student programs at Riverview High.",
+    href: "/events",
+  },
 ];
 
 export default function HomePage() {
@@ -78,21 +89,23 @@ export default function HomePage() {
               Riverview, New Brunswick
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
-              Fellow Royals,
+              Friends of the
               <br />
-              <span className="text-royalBurgundy">Helping Royals.</span>
+              <span className="text-royalBurgundy">Royals</span>
+              <br />
+              Alumni Association
             </h1>
             <p className="text-white/70 font-light text-base leading-relaxed mb-6">
-              Supporting Riverview students through scholarships, mentorship, and community.
+              Join a vibrant community of former students dedicated to fostering connections, empowering the next generation, and creating lasting impact.
             </p>
             <div className="flex flex-row gap-3">
               <Link href="/donate"
                 className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-xs uppercase tracking-widest px-6 py-3 hover:bg-opacity-90 transition-all duration-300">
-                Support a Student Today
+                Donate Today
               </Link>
-              <Link href="/about"
+              <Link href="/events"
                 className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-xs uppercase tracking-widest px-6 py-3 hover:bg-white hover:text-royalNavy transition-all duration-300">
-                Apply for a Scholarship
+                Upcoming Events
               </Link>
             </div>
           </div>
@@ -111,19 +124,18 @@ export default function HomePage() {
           {/* Left: mission text */}
           <div className="flex flex-col justify-center px-10 py-8">
             <h2 className="text-xl md:text-2xl font-extrabold text-royalNavy mb-3">
-              Every Student Deserves a Champion
+              What is Friends of the Royals?
             </h2>
             <p className="text-royalNavy/65 font-light text-sm leading-relaxed mb-5">
-              Some students have the drive — but not always the support.
-              Friends of the Royals exists to ensure every student at Riverview
-              High School has the opportunity to succeed. We recognize character.
-              We support potential. We build futures.
+              Friends of the Royals is a volunteer-driven alumni association built on one simple belief:
+              that every student at Riverview High School deserves the opportunity to thrive. Founded by
+              proud graduates of RHS, we channel community pride and alumni generosity into real, lasting impact.
             </p>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 border-2 border-royalNavy text-royalNavy font-extrabold text-xs uppercase tracking-widest px-5 py-2.5 hover:bg-royalNavy hover:text-white transition-all duration-300 self-start"
             >
-              Learn How You Can Help
+              Learn Our Story
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -134,19 +146,19 @@ export default function HomePage() {
           <div className="grid grid-cols-3 divide-x divide-royalMauve">
             {[
               {
-                d: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z",
-                number: "$5,000+",
-                label: "Awarded in Scholarships Each Year",
-              },
-              {
-                d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-                number: "100+",
-                label: "Students Supported",
+                d: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                number: "10+",
+                label: "Fundraising Initiatives",
               },
               {
                 d: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-                number: "1",
-                label: "Strong Community Giving Back",
+                number: "3+",
+                label: "Facilities Improved",
+              },
+              {
+                d: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z",
+                number: "5+",
+                label: "Scholarships Awarded",
               },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-center text-center px-6 py-8 gap-3">
@@ -171,23 +183,25 @@ export default function HomePage() {
       <section className="bg-royalGray py-20 px-6" ref={s1}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="reveal-left">
-            <p className="section-label">Our Mission</p>
+            <p className="section-label">Who We Are</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-royalNavy mb-6">
-              Every Student Deserves a Champion
+              What is Friends of the Royals?
             </h2>
             <p className="text-royalNavy/70 font-light text-lg leading-relaxed mb-4">
-              Some students have the drive — but not always the support. Friends of the Royals exists to
-              ensure that every student at Riverview High School has the opportunity to succeed, regardless
-              of their circumstances.
+              Friends of the Royals is a volunteer-driven alumni association built on one simple belief:
+              that every student at Riverview High School deserves the opportunity to thrive. Founded by
+              proud graduates of RHS, we channel community pride and alumni generosity into real, lasting impact.
             </p>
             <p className="text-royalNavy/70 font-light text-lg leading-relaxed mb-8">
-              We recognize character. We support potential. We build futures.
+              From funding community projects to supporting students who cannot afford prom attire, every
+              initiative we undertake is rooted in the Royals spirit — pride, community, and the drive to
+              be better together.
             </p>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 border-2 border-royalNavy text-royalNavy font-extrabold text-sm uppercase tracking-widest px-6 py-3 hover:bg-royalNavy hover:text-white transition-all duration-300"
             >
-              Learn How You Can Help
+              Learn Our Story
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -197,19 +211,19 @@ export default function HomePage() {
           <div className="reveal-right space-y-4">
             {[
               {
-                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />,
-                number: "$5,000+",
-                label: "Awarded in Scholarships Each Year",
-              },
-              {
-                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />,
-                number: "100+",
-                label: "Students Supported",
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />,
+                number: "$30,000+",
+                label: "Raised for Students",
               },
               {
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
-                number: "1",
-                label: "Strong Community Giving Back",
+                number: "3+",
+                label: "Projects Completed",
+              },
+              {
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />,
+                number: "50+",
+                label: "Alumni Connected",
               },
             ].map((item, i) => (
               <div key={i} className="bg-white flex items-center gap-6 p-6 border-l-4 border-royalBurgundy shadow-sm">
@@ -351,9 +365,8 @@ export default function HomePage() {
       ============================================================ */}
       <section className="grid grid-cols-1 lg:grid-cols-2" ref={s4}>
         <div className="bg-royalNavy px-10 py-16 md:px-14 flex flex-col justify-center">
-          <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-4">Stay Connected</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">Upcoming Events</h2>
-          <p className="text-white/55 font-light mb-10">Show your support.</p>
+          <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-4">Mark Your Calendar</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10">Upcoming Events</h2>
           <div className="space-y-6 mb-10">
             {upcomingEvents.map((event, i) => (
               <div key={i} className="reveal flex items-start gap-4" style={{ transitionDelay: `${i * 100}ms` }}>
@@ -361,8 +374,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <div>
-                  <p className="text-royalBurgundy font-extrabold text-xs uppercase tracking-widest mb-0.5">{event.date}</p>
-                  <p className="text-white font-semibold">{event.title}</p>
+                  <p className="text-royalBurgundy font-extrabold text-xs uppercase tracking-widest mb-0.5">{event.date} · {event.location}</p>
+                  <p className="text-white font-semibold mb-1">{event.title}</p>
+                  <p className="text-white/55 font-light text-sm leading-relaxed">{event.desc}</p>
                 </div>
               </div>
             ))}
@@ -398,10 +412,14 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
               The Turf Field Project
             </h2>
+            <p className="text-white/80 font-light text-lg leading-relaxed mb-4">
+              Riverview High School's student athletes deserve a world-class playing surface. The Turf Field
+              Project is our largest and most ambitious initiative — a full-size artificial turf field that
+              will serve RHS students for generations.
+            </p>
             <p className="text-white/80 font-light text-lg leading-relaxed mb-10">
-              Riverview High School's student athletes deserve a world-class playing surface. This full-size
-              artificial turf field will serve RHS students for generations — year-round practice, reduced
-              injuries, and a facility the whole community rallies around.
+              This field means year-round practice regardless of weather, reduced injury risk, and a facility
+              that brings the community together for Friday night games.
             </p>
             <Link
               href="/projects/turf-field"
@@ -455,7 +473,7 @@ export default function HomePage() {
             <p className="section-label">Proud Partners</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-royalNavy mb-3">Our Sponsors</h2>
             <p className="text-royalNavy/60 font-light max-w-lg mx-auto">
-              These community leaders make our work possible. Their generosity directly supports Riverview students.
+              These community leaders and businesses make our work possible. Their generosity directly supports Riverview High School students.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -486,22 +504,30 @@ export default function HomePage() {
         className="py-16 px-6"
         style={{ background: "linear-gradient(135deg, #273742 0%, #1a2530 100%)" }}
       >
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white text-center md:text-left leading-tight">
-            Be the reason a student gets<br className="hidden md:block" /> their opportunity.
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-6">Royals Forever</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            Once a Royal,
+            <br />
+            <span className="text-royalBurgundy">Always a Royal.</span>
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-            <Link
-              href="/donate"
-              className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-opacity-90 hover:shadow-xl hover:-translate-y-0.5"
-            >
-              Donate Today
-            </Link>
+          <p className="text-white/70 font-light text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+            The Royals spirit doesn&apos;t fade when you walk across that stage. It lives in every alumnus
+            who shows up for the next generation — in every dollar donated, every event attended, every
+            hand raised in support of Riverview High School.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/about"
-              className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5"
             >
-              Get Involved
+              Our Story
+            </Link>
+            <Link
+              href="/donate"
+              className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
+            >
+              Support the Royals
             </Link>
           </div>
         </div>
