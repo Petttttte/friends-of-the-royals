@@ -53,71 +53,95 @@ export default function HomePage() {
   return (
     <>
       {/* ============================================================
-          HERO — full-bleed photo, left-aligned
+          HERO — split: dark text left, photo visible right, compact height
       ============================================================ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section
+        className="relative flex items-center overflow-hidden"
+        style={{ height: "calc(100vh - 70px)", minHeight: "520px", maxHeight: "780px" }}
+      >
+        {/* Full-bleed graduation photo */}
         <img
           src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
         />
-        <div className="absolute inset-0" style={{ background: "rgba(39,55,66,0.72)" }} />
+        {/* Directional gradient: opaque navy left → transparent right so photo shows */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(39,55,66,0.97) 0%, rgba(39,55,66,0.95) 35%, rgba(39,55,66,0.60) 60%, rgba(39,55,66,0.10) 100%)",
+          }}
+        />
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-royalBurgundy z-10" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-32">
-          <div className="animate-fadeIn max-w-3xl">
-            <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-5">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="animate-fadeIn max-w-xl">
+            <p className="text-royalTan font-extrabold text-xs uppercase tracking-widest mb-4">
               Riverview, New Brunswick
             </p>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-none mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-none mb-5">
               Fellow Royals,
               <br />
               <span className="text-royalBurgundy">Helping Royals.</span>
             </h1>
-            <p className="text-white/75 font-light text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+            <p className="text-white/75 font-light text-base md:text-lg mb-8 leading-relaxed">
               Supporting Riverview students through scholarships, mentorship,
               and community — because every Royal deserves a champion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/donate"
-                className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center bg-royalBurgundy text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-opacity-90 hover:shadow-2xl hover:-translate-y-0.5"
               >
                 Support a Student Today
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center border-2 border-white text-white font-extrabold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-300 hover:bg-white hover:text-royalNavy hover:-translate-y-0.5"
               >
                 Apply for a Scholarship
               </Link>
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-          <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
       </section>
 
       {/* ============================================================
-          WHITE STATS BAR
+          WHITE STATS BAR — visible above the fold
       ============================================================ */}
-      <section className="bg-white py-10 px-6 border-b-4 border-royalBurgundy shadow-lg">
-        <div className="max-w-5xl mx-auto">
+      <section className="bg-white border-b-4 border-royalBurgundy shadow-lg">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-royalMauve">
             {[
-              { number: "$5,000+", label: "Awarded in Scholarships Each Year" },
-              { number: "100+", label: "Students Supported" },
-              { number: "$30,000+", label: "Raised for the Community" },
-              { number: "1", label: "Strong Community Giving Back" },
+              {
+                icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z",
+                number: "$5,000+",
+                label: "Awarded in Scholarships Each Year",
+              },
+              {
+                icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
+                number: "100+",
+                label: "Students Supported",
+              },
+              {
+                icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                number: "$30,000+",
+                label: "Raised for the Community",
+              },
+              {
+                icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+                number: "50+",
+                label: "Alumni Giving Back",
+              },
             ].map((stat, i) => (
-              <div key={i} className="text-center px-6 py-2">
-                <p className="text-3xl md:text-4xl font-extrabold text-royalBurgundy mb-1">{stat.number}</p>
-                <p className="text-royalNavy font-semibold text-xs uppercase tracking-widest leading-snug">{stat.label}</p>
+              <div key={i} className="flex flex-col items-center justify-center gap-1 px-4 py-6 text-center">
+                <svg className="w-7 h-7 text-royalBurgundy mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={stat.icon} />
+                </svg>
+                <p className="text-3xl font-extrabold text-royalNavy">{stat.number}</p>
+                <p className="text-royalNavy/60 font-semibold text-xs uppercase tracking-widest leading-snug">{stat.label}</p>
               </div>
             ))}
           </div>
